@@ -19,7 +19,7 @@ FirebaseData fbdo;
 FirebaseAuth auth;
 FirebaseConfig config;
 String uid;
-const int LDR_PIN = 34;  // Chân analog kết nối với cảm biến ánh sáng
+const int LDR_PIN = 34;  // Chân analog kết nối với biến trở
 const int LED_PIN = 2;
 
 #define led0 0
@@ -78,7 +78,7 @@ Firebase.begin(&config, &auth);
 }
 
 void loop() {
-  if (Firebase.ready() && signupOK && (millis() - sendDataPrevMillis > 15000|| sendDataPrevMillis == 0)) 
+  if (Firebase.ready() && signupOK && (millis() - sendDataPrevMillis > 250|| sendDataPrevMillis == 0)) 
   {
      sendDataPrevMillis = millis();
   
