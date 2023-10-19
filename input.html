@@ -1,0 +1,121 @@
+<!DOCTYPE html> <html lang="en">
+<head> <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESP Firebase App</title>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use --> 
+<!-- https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+<script>
+const auth = firebase.auth();
+  var email = "lethanhtrung05042002@gmail.com";
+  var password = "lethanhtrung14736928";
+  document.getElementById("signIn").addEventListener("click", function () {
+  console.log("Signed in!");
+  //Sign In User with Email and Password
+  auth.signInWithEmailAndPassword(email, password).catch(function (error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  console.log(errorCode);
+  console.log(errorMessage);
+  })
+  });</script>
+<script>
+document.getElementById("signOut").addEventListener("click", function () {
+auth.signOut().then(function (user) {
+// Sign-out successful.
+console.log('User Logged Out!');
+console.log(user)
+}).catch(function (error) {
+// An error happened.
+console.log(error);
+})
+});
+</script>
+<script>
+auth.onAuthStateChanged(function (user) {
+  console.log(user)
+  if (user) {
+  // User is signed in.
+  var displayName = user.displayName;
+  var email = user.email;
+  var emailVerified = user.emailVerified;
+  var isAnonymous = user.isAnonymous;
+  var uid = user.uid;
+  var providerData = user.providerData;
+  // ...
+  } else {
+  // User is signed out.
+  console.log("User is signed out");
+  // ...
+  }
+  });</script>
+
+<script>
+var firebaseConfig = {
+  apiKey: "AIzaSyDJWcEsdUX8kbqYE2CF8X30Md9FhJH0C2A",
+  authDomain: "test-zkz.firebaseapp.com",
+  databaseURL: "https://test-zkz-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "test-zkz",
+  storageBucket: "test-zkz.appspot.com",
+  messagingSenderId: "516327489889",
+  appId: "1:516327489889:web:59af1eed24d3f82d988520",
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+ var database = firebase.database();
+</script>
+<script src="app.js" defer></script>
+
+<script>
+  //hàm này sẽ được gọi khi nhấn "To Realtime Database"
+  function newData() {
+    var intVal = parseInt(document.getElementById('int').value, 10);
+    var floatVal = parseFloat(document.getElementById('float').value);
+    var stringVal = document.getElementById('string').value;
+    firebase.database().ref('test/').set({
+    float: floatVal,
+    int: intVal,
+    string: stringVal
+    });}
+</script>
+
+<style media="screen">
+  body { background: #595b6b; color: rgba(255, 255, 255, 0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+  #message { background: rgb(0, 0, 0); max-width: 360px; margin: 100px auto 16px; padding: 32px 24px 16px; border-radius: 3px; }
+  #message h3 { color: #888; font-weight: normal; font-size: 16px; margin: 16px 0 12px; }
+  #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+  #message h1 { font-size: 22px; font-weight: 300; color: rgb(255, 255, 255); margin: 0 0 16px;}
+  #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+  #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+  #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+  #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+  @media (max-width: 600px) {
+    body, #message { margin-top: 0; background: rgb(0, 0, 0); box-shadow: none; }
+    body { border-top: 16px solid #ffa100; }
+  }
+</style>
+
+</head>
+<div id="message">
+<body>
+ <h1 align="center">Thẻ  &lt;Input&gt; đến dữ liệu firebase </table> </h1>
+
+ <form action="#" method="post" id="delInfo" align="center">
+   Int:<br>
+   <input type="text" name="int" id="int"></br>
+
+   Float:<br>
+   <input type="text" name="float" id="float" ></br>
+
+   String:<br>
+   <input type="text" name="string" id="string"></br><br>
+
+   <input type="submit" onClick="newData()" value="To Realtime Database" >
+ </form>
+</body>
+</div>
+</html>
