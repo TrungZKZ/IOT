@@ -1,0 +1,168 @@
+<!DOCTYPE html> <html lang="en">
+<head> <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESP Firebase App</title>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+<script>
+const auth = firebase.auth();
+  var email = "lethanhtrung05042002@gmail.com";
+  var password = "lethanhtrung14736928";
+  document.getElementById("signIn").addEventListener("click", function () {
+  console.log("Signed in!");
+  auth.signInWithEmailAndPassword(email, password).catch(function (error) {
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  console.log(errorCode);
+  console.log(errorMessage);
+  })
+  });</script>
+<script>
+document.getElementById("signOut").addEventListener("click", function () {
+auth.signOut().then(function (user) {
+console.log('User Logged Out!');
+console.log(user)
+}).catch(function (error) {
+console.log(error);
+})
+});
+</script>
+<script>
+auth.onAuthStateChanged(function (user) {
+  console.log(user)
+  if (user) {
+  var displayName = user.displayName;
+  var email = user.email;
+  var emailVerified = user.emailVerified;
+  var isAnonymous = user.isAnonymous;
+  var uid = user.uid;
+  var providerData = user.providerData;
+  // ...
+  } else {
+  console.log("User is signed out");
+  // ...
+  }
+  });</script>
+
+<script>
+var firebaseConfig = {
+  apiKey: "AIzaSyDJWcEsdUX8kbqYE2CF8X30Md9FhJH0C2A",
+  authDomain: "test-zkz.firebaseapp.com",
+  databaseURL: "https://test-zkz-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "test-zkz",
+  storageBucket: "test-zkz.appspot.com",
+  messagingSenderId: "516327489889",
+  appId: "1:516327489889:web:59af1eed24d3f82d988520",
+};
+
+firebase.initializeApp(firebaseConfig);
+ var database = firebase.database();
+</script>
+<script src="app.js" defer></script>
+
+<script>
+  //hàm này sẽ được gọi khi nhấn "To Realtime Database"
+  function newData() {
+    var intVal = parseInt(document.getElementById('int').value, 10);
+    firebase.database().ref('test/').set({
+    float: floatReading,
+    int: intVal,
+    string: stringReading
+    });}
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style media="screen">
+  body { background: #595b6b; color: rgba(255, 255, 255, 0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+  #message { background: rgb(0, 0, 0); max-width: 360px; margin: 100px auto 16px; padding: 32px 24px 16px; border-radius: 3px; }
+  #message h3 { color: #888; font-weight: normal; font-size: 16px; margin: 16px 0 12px; }
+  #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+  #message h1 { font-size: 22px; font-weight: 300; color: rgb(255, 255, 255); margin: 0 0 16px;}
+  #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+  #message a {text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 5px; border-radius: 10px; }
+  #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+  #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+  @media (max-width: 600px) {
+    body, #message { margin-top: 0; background: rgb(0, 0, 0); box-shadow: none; }}
+  .slider {
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 50px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  -webkit-scroll-snap-points-x: repeat(300px);
+      -ms-scroll-snap-points-x: repeat(300px);
+          scroll-snap-points-x: repeat(300px);
+  -webkit-scroll-snap-type: mandatory;
+      -ms-scroll-snap-type: mandatory;
+          scroll-snap-type: mandatory;}
+.slide {
+  width: 300px;
+  flex-shrink: 0;
+  height: 100%;}
+.slides > div:target {
+  transform: scale(0.8);}
+.slidecontainer {
+  width: 100%;}
+.slider0 {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;  
+  background: #ffffff;
+  outline: none;
+  opacity: 1;
+  -webkit-transition: .2s;
+  transition: opacity .2s;}
+.slider0:hover {
+  opacity: 1;}
+.slider0::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #039be5;
+  cursor: pointer;}
+.slider0::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #ffffff;
+  cursor: pointer;}
+</style>
+</head>
+<div id="message">
+<body>
+  <h1 align="center">Slider</table> </h1>
+  <div class="slide-wrap" align="center">
+    <div class="slider" align="center" style="line-height: 140px; text-align: center;">
+      <div class="slide" id="slide-1">int<br>
+        <span id="reading-int"></span></div>
+      <div class="slide" id="slide-2">float<br>
+        <span id="reading-float"></span></div>
+      <div class="slide" id="slide-3">string<br>
+        <span id="reading-string"></span></div>
+    </div>
+    <br>
+    <a href="#slide-1">INt</a>
+    <a href="#slide-2">FLOAT</a>
+    <a href="#slide-3">STRING</a>
+  </div>
+  <br>
+  <div class="slidecontainer" align="center">
+    <p>Set int tới database: <span id="demo"></span></p>
+    <input type="range" min="0" max="255" value="0" class="slider0" id="int">
+    <br><br><input type="submit" onClick="newData()" value="To Realtime Database" >
+  </div>
+  <script>
+    var slider = document.getElementById("int");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+    slider.oninput = function() {output.innerHTML = this.value;}
+    </script></body></div></html>
