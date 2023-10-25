@@ -14,11 +14,10 @@
 [Hosting URL](https://test-zkz.web.app)
 
 
-<details align="center">
+<details>
 <summary>động vật hoang dã</summary>
-<p align="center">
 
-  
+
 | Họ và Tên | MSSV |
 |-----:|---------------|
 |Bùi Tấn Đạt|B2012493|
@@ -29,5 +28,4 @@
 |Nguyễn Thành Nhân|B2012452|
 
 
-</p>
 </details>
