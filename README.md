@@ -16,6 +16,7 @@
 
 <details align="center">
 <summary>động vật hoang dã</summary>
+<p align="center">
 
   
 | Họ và Tên | MSSV |
@@ -25,7 +26,8 @@
 |Lê Phú Nhuận |B2012453|
 |Lê Thành Trung|B2012477|
 |Lê Minh Nhựt|B2012454|
-|Nguyễn Thành NhânB2012452||
+|Nguyễn Thành Nhân|B2012452|
 
 
+</p>
 </details>
