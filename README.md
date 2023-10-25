@@ -4,7 +4,7 @@
 
 
 
-<picture>
+<picture align="center">
   <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://i.pinimg.com/originals/dc/a4/0b/dca40bbade8277d451d73c9007426284.jpg">
 </picture>
 
