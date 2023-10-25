@@ -11,7 +11,7 @@
 [Realtime Database](https://console.firebase.google.com/u/0/project/test-zkz/database/test-zkz-default-rtdb/data)<br />
 [Project Console](https://console.firebase.google.com/project/test-zkz/overview) <br />
 [Hosting URL](https://test-zkz.web.app)<br />
-[blynk](https://blynk.cloud/dashboard/364713/global/filter/2643431)
+[Blynk](https://blynk.cloud/dashboard/364713/global/filter/2643431)
 
 <details>
 <summary>Nhóm 11</summary>
