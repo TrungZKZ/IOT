@@ -1,0 +1,270 @@
+<!DOCTYPE html> <html lang="en">
+<head> <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nhóm 11 Buổi 5</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Overpass:300,400,600,800'>
+<link rel="stylesheet" href="./style.css">
+<!-- core Firebase JS SDK luôn được required và phải được liệt kê trước tiên -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+<!-- thư viện firebase -->
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+
+
+
+<script>
+ // cấu hình Firebase
+ var firebaseConfig = {
+  apiKey: "AIzaSyDOHyZaYK14ymV5UNmgyq0Vv33Px4p_fRM",
+  authDomain: "nhom11-4aaf5.firebaseapp.com",
+  databaseURL: "https://nhom11-4aaf5-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "nhom11-4aaf5",
+  storageBucket: "nhom11-4aaf5.appspot.com",
+  messagingSenderId: "263553593091",
+  appId: "1:263553593091:web:78171e729a09bc9260c336",
+  measurementId: "G-JSE36XQKNP"
+};
+
+// Khởi tạo Firebase
+ firebase.initializeApp(firebaseConfig);
+ var database = firebase.database();
+
+///////////////////////////////////////// log in //////////////////////////////////////////////////
+const auth = firebase.auth();
+var email = "nhom11_app@myemail.com";
+var password = "666999";
+
+function login() {
+console.log("Signed in!");
+//Đăng nhập bằng email và mật khẩu
+auth.signInWithEmailAndPassword(email, password).catch(function (error) {
+// Hiển thị lỗi ở đây nếu có
+var errorCode = error.code;
+var errorMessage = error.message;
+console.log(errorCode);
+console.log(errorMessage);
+})};
+
+///////////////////////////////////////// log out //////////////////////////////////////////////////
+function logout() {
+auth.signOut().then(function (email) {
+  // đăng xuất thành công
+  console.log('User Logged Out!');
+  }).catch(function (error) {
+  // Hiển thị lỗi ở đây nếu có
+  console.log(error);
+})};
+
+
+</script>
+<script src="app.js" defer></script>
+
+</head>
+ <!--///////////////////////////////////////// BODY //////////////////////////////////////////////////-->
+<body>
+  <!-- Thanh chọn tab -->
+  <div class="tabset">
+    <!-- Tab 1 -->
+    <input type="radio" name="tabset" id="tab1" aria-controls="noidung3" checked>
+    <label for="tab1">Nội Dung 3</label>
+    <!-- Tab 2 -->
+    <input type="radio" name="tabset" id="tab2" aria-controls="noidung4">
+    <label for="tab2">Nội Dung 4</label>
+    <!-- Tab 3 -->
+    <input type="radio" name="tabset" id="tab3" aria-controls="noidung5">
+    <label for="tab3">Nội Dung 5</label>
+    <!-- Tab 4 -->
+    <input type="radio" name="tabset" id="tab4" aria-controls="noidung6">
+    <label for="tab4">Nội Dung 6</label>
+    <!-- Tab 5 -->
+    <input type="radio" name="tabset" id="tab5" aria-controls="noidung7">
+    <label for="tab5">Nội Dung 7</label>
+    
+    
+    <div class="tab-panels">
+<!-- Nội Dung 3 ------------------------------------------------------------------------------------------------------------------------------------------------>
+      <section id="noidung3" class="tab-panel">
+        <h2>Nội Dung 3</h2>
+        <p><strong>Yêu Cầu: </strong>Tạo hai button trên ứng dụng để tạo chức năng Log in và Log out.</p>
+        <head>
+          <meta charset="utf-8">
+            <title>Login</title>
+            
+            <link rel="stylesheet" href="https://console.firebase.google.com/u/0/project/nhom11-4aaf5/authentication/users">
+        
+        </head>
+        <div id="login">
+          <form name='form-login'>    
+            <input type="submit" onclick="login()" value="Log in">   
+        </form></div>
+            <div id="login">
+              <form name='form-login'>
+                <input type="submit" onclick="logout()" value="Log out"><br>        
+        </form></div>
+        
+      </section>
+
+<!-- Nội Dung 4 ------------------------------------------------------------------------------------------------------------------------------------------------>
+      <section id="noidung4" class="tab-panel">
+        <h2>Nội Dung 4</h2>
+        <p><strong>Yêu Cầu: </strong>Chọn và tạo hai UI hiển thị giá trị nhiệt độ và độ ẩm (Đường dẫn: NhomX/temperature, NhomX/humidity).</p>
+
+<!-- table phong cách hacker lỏ -->
+<fieldset>
+  <legend>STATUS</legend>
+  <table>
+    <tr>
+      <td>Temperature</td>
+      <td class="value"><span id="reading-temp"></span>&deg;C</td>
+    </tr>
+    <tr>
+      <td>Humidity</td>
+      <td class="value"><span id="reading-doam"></span>%</td>
+    </tr>
+  </table>
+</fieldset>
+
+<!-- slider -->
+<input type="radio" checked name="slider" id="l01">
+<input type="radio" name="slider" id="l02">
+
+  
+<div id="wrap">
+  <ul id="slider" >
+    <li><span id="reading-temp22"></span>&deg;C</li>
+    <li><span id="reading-doam22"></span>%</li>
+
+  </ul>
+</div>
+  <p align="center">
+<div id="opts" >
+  <label for="l01">Nhiệt độ</label>
+  <label for="l02">Độ ẩm</label>
+</div></p>
+
+      </section>
+
+<!-- Nội Dung 5 ------------------------------------------------------------------------------------------------------------------------------------------------>
+      <section id="noidung5" class="tab-panel">
+        <h2>Nội Dung 5</h2>
+        <p><strong>Yêu Cầu: </strong>Tạo bảng hiển thị giá trị hai mảng nhiệt độ và độ ẩm trên Web App (Đường dẫn: NhomX/temperature_arr, NhomX/humidity_arr).</p><br>
+        <div id="table-scroll" class="table-scroll">
+          <div class="table-wrap">
+            <table class="main-table">
+              <thead>
+                <tr>
+                  <th class="fixed-side" scope="col">&nbsp;</th>
+                  <th scope="col">1</th>
+                  <th scope="col">2</th>
+                  <th scope="col">3</th>
+                  <th scope="col">4</th>
+                  <th scope="col">5</th>
+                  <th scope="col">6</th>
+                  <th scope="col">7</th>
+                  <th scope="col">8</th>
+                  <th scope="col">9</th>
+                  <th scope="col">10</th>
+                  <th scope="col">11</th>
+                  <th scope="col">12</th>
+                  <th scope="col">13</th>
+                  <th scope="col">14</th>
+                  <th scope="col">15</th>
+                  <th scope="col">16</th>
+                  <th scope="col">17</th>
+                  <th scope="col">18</th>
+                  <th scope="col">19</th>
+                  <th scope="col">20</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th class="fixed-side">Nhiệt Độ</th>
+                  <td><span id="reading-temp1"></span><br></td>
+                  <td><span id="reading-temp2"></span><br></td>
+                  <td><span id="reading-temp3"></span><br></td>
+                  <td><span id="reading-temp4"></span><br></td>
+                  <td><span id="reading-temp5"></span><br></td>
+                  <td><span id="reading-temp6"></span><br></td>
+                  <td><span id="reading-temp7"></span><br></td>
+                  <td><span id="reading-temp8"></span><br></td>
+                  <td><span id="reading-temp9"></span><br></td>
+                  <td><span id="reading-temp10"></span><br></td>
+                  <td><span id="reading-temp11"></span><br></td>
+                  <td><span id="reading-temp12"></span><br></td>
+                  <td><span id="reading-temp13"></span><br></td>
+                  <td><span id="reading-temp14"></span><br></td>
+                  <td><span id="reading-temp15"></span><br></td>
+                  <td><span id="reading-temp16"></span><br></td>
+                  <td><span id="reading-temp17"></span><br></td>
+                  <td><span id="reading-temp18"></span><br></td>
+                  <td><span id="reading-temp19"></span><br></td>
+                  <td><span id="reading-temp20"></span><br></td>
+                </tr>
+                <tr>
+                  <th class="fixed-side">Độ Ẩm</th>
+                  <td><span id="reading-doam1"></span><br></td>
+                  <td><span id="reading-doam2"></span><br></td>
+                  <td><span id="reading-doam3"></span><br></td>
+                  <td><span id="reading-doam4"></span><br></td>
+                  <td><span id="reading-doam5"></span><br></td>
+                  <td><span id="reading-doam6"></span><br></td>
+                  <td><span id="reading-doam7"></span><br></td>
+                  <td><span id="reading-doam8"></span><br></td>
+                  <td><span id="reading-doam9"></span><br></td>
+                  <td><span id="reading-doam10"></span><br></td>
+                  <td><span id="reading-doam11"></span><br></td>
+                  <td><span id="reading-doam12"></span><br></td>
+                  <td><span id="reading-doam13"></span><br></td>
+                  <td><span id="reading-doam14"></span><br></td>
+                  <td><span id="reading-doam15"></span><br></td>
+                  <td><span id="reading-doam16"></span><br></td>
+                  <td><span id="reading-doam17"></span><br></td>
+                  <td><span id="reading-doam18"></span><br></td>
+                  <td><span id="reading-doam19"></span><br></td>
+                  <td><span id="reading-doam20"></span><br></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </section>
+
+<!-- Nội Dung 6 ------------------------------------------------------------------------------------------------------------------------------------------------>
+      <section id="noidung6" class="tab-panel">
+        <h2>Nội Dung 6</h2>
+        <p><strong>Yêu Cầu: </strong>Thêm UI tính và hiển thị giá trị trung bình của nhiệt độ và độ ẩm.</p>
+        
+        <div class="box" id="temperature-box">
+          <p>Nhiệt độ trung bình :</p><span id="average-doam"></span>
+        </div>
+        <div class="box" id="humidity-box">
+          <p>Độ ẩm trung bình :</p><span id="average-temp"></span>
+          
+        </div>
+      </section>
+
+<!-- Nội Dung 7 ------------------------------------------------------------------------------------------------------------------------------------------------>
+      <section id="noidung7" class="tab-panel">
+        <h2>Nội Dung 7</h2>
+        <p><strong>Yêu Cầu:</strong> Thêm UI để thêm tính năng cảnh báo khi nhiệt độ vượt một giá trị đặt (giá trị đặt được thiết lập ngay trên ứng dụng).</p>
+        <div class="alert-container">
+          <label for="threshold">Nhập giá trị nhiệt độ tối đa: <span id="threshold-value"></span></label>
+          <input type="range" id="threshold" name="threshold" min="0" max="100" value="25" oninput="updateThresholdValue()">
+          <button onclick="checkTemperature()">Kiểm tra nhiệt độ</button>
+          <div id="alert-dot"></div>
+          <p id="warning"></p>
+        </div>
+      </section>
+
+    </div> 
+  </div>
+
+
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</body>
+</html>
