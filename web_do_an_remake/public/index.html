@@ -1,0 +1,243 @@
+<!DOCTYPE html> <html lang="en">
+<head>
+   <meta charset="utf-8">
+  <title>🌧</title>
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="Free Website Template" name="keywords">
+  <meta content="Free Website Template" name="description">
+
+<!-- Favicon -->
+<link href="img/favicon.ico" rel="icon">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- CSS Libraries -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link href="lib/animate/animate.min.css" rel="stylesheet">
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+<!-- Template Stylesheet -->
+<link href="css/style.css" rel="stylesheet">
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use --> 
+<!-- https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+
+<script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyB23q5F6rcukMXO66E9CuoQ0LQNjxE4IHk",
+      authDomain: "doaniot-bc245.firebaseapp.com",
+      databaseURL: "https://doaniot-bc245-default-rtdb.firebaseio.com",
+      projectId: "doaniot-bc245",
+      storageBucket: "doaniot-bc245.appspot.com",
+      messagingSenderId: "570540356257",
+      appId: "1:570540356257:web:fe03e378986b0b5e5df6e0"
+    };
+    firebase.initializeApp(firebaseConfig);
+     var database = firebase.database();
+</script>
+
+<script>
+const auth = firebase.auth();
+  var email = "lethanhtrung05042002@gmail.com";
+  var password = "666999";
+
+//Đăng nhập bằng email và mật khẩu
+auth.signInWithEmailAndPassword(email, password).catch(function (error) {
+// Hiển thị lỗi ở đây nếu có
+var errorCode = error.code;
+var errorMessage = error.message;
+console.log(errorCode);
+console.log(errorMessage);
+})
+</script>
+
+<script src="app.js" defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style media="screen"></style>
+
+</head>
+
+<link rel="shortcut icon" type="image/ico" href="/favicon.ico"/>
+<div id="message">
+<body onload="animate_string()" data-spy="scroll" data-target=".navbar" data-offset="51">
+  <marquee id = "welcome"></p></marquee>
+          <!-- Nav Bar Start -->
+          <div class="navbar navbar-expand-lg bg-light navbar-light">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand"><p id="demo">💐😸</p></a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="#home" class="nav-item nav-link active">Home</a>
+                        <a href="#team" class="nav-item nav-link">Thông tin</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+                <!-- Hero Start -->
+                <div class="hero" id="home">
+                  <div class="container-fluid">
+                      <div class="row align-items-center">
+                          <div class="col-sm-12 col-md-6">
+                              <div class="hero-content">
+                                  <div class="hero-text">
+                                      <p>Nhóm 11</p>
+                                      <h1>Giám sát cây cảnh văn phòng</h1>
+                                      <h2></h2>
+                                      <div class="typed-text">Nguyễn Hoàng Khiêm, Lê Thành Trung, Lê Phú NHuận, Lê Minh Nhựt, Nguyễn Thành Nhân, Bùi Tấn Đạt</div>
+                                  </div>
+                                  <div class="hero-btn">
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-sm-12 col-md-6 d-none d-md-block">
+                              <div class="hero-image">
+                                  <img src="img/ABUIABACGAAgnuih8AUo4KagzwUw0Bc4wB8.jpg" alt="Hero Image">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- Hero End -->
+
+
+                  <!-- Main Start -->
+        <div class="team" id="team">
+          <div class="container">
+              <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+                  <p>Độ Ẩm</p>
+                  <h2>🌳</h2>
+              </div>
+              <div class="row">
+                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.0s">
+                      <div class="team-item">
+                          <div class="team-img">
+                              <img src="img/Hình-ảnh-về-hoa-cỏ-may-đẹp-5.jpg" alt="Image">
+                          </div>
+                          <div class="team-text">
+                              <h2><span id="reading-doam1"></span>%</h2>
+                              <h4>Ngọn Cỏ Ven Đường</h4>
+
+
+                              <div class="team-social">
+                                  <a class="btn" onclick="newData(1)"><i class="fa fa-tint"></i></a>
+                                  <input type="range" min="0" max="100" value="15" class="slider" id="myRange1">
+                              </div>
+                              <p align="right"><span id="giatri1"></span>% <button class="button button2" onclick="SetRelay(1)">ĐẶT</button></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+                      <div class="team-item">
+                          <div class="team-img">
+                              <img src="img/Rau_càng_cua.jpg" alt="Image">
+                          </div>
+                          <div class="team-text">
+                            <h2><span id="reading-doam2"></span>%</h2>
+                              <h4>Quỷ Châm Thảo</h4>
+                        
+                              <div class="team-social">
+                                  <a class="btn" onclick="newData(2)"><i class="fa fa-tint"></i></a>
+                                  <input type="range" min="0" max="100" value="15" class="slider" id="myRange2">
+                              </div>
+                              <p align="right"><span id="giatri2"></span>% <button class="button button2" onclick="SetRelay(2)">ĐẶT</button></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
+                      <div class="team-item">
+                          <div class="team-img">
+                              <img src="img/cay-cut-lon-1.jpg" alt="Image">
+                          </div>
+                          <div class="team-text">
+                            <h2><span id="reading-doam3"></span>%</h2>
+                              <h4>Thắng Hồng Kế</h4>
+                         
+                              <div class="team-social">
+                                  <a class="btn" onclick="newData(3)"><i class="fa fa-tint"></i></a>
+                                  <input type="range" min="0" max="100" value="15" class="slider" id="myRange3">
+                              </div>
+                              <p align="right"><span id="giatri3"></span>% <button class="button button2" onclick="SetRelay(3)">ĐẶT</button></p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
+                      <div class="team-item">
+                          <div class="team-img">
+                              <img src="img/OIP (1).jpg" alt="Image">
+                          </div>
+                          <div class="team-text">
+                            <h2><span id="reading-doam4"></span>%</h2>
+                              <h4>Diệp Hạ Châu</h4>
+
+                              <div class="team-social">
+                                  <a class="btn" onclick="newData(4)"><i class="fa fa-tint"></i></a>
+                                  <input type="range" min="0" max="100" value="reading-relay4" class="slider" id="myRange4">
+                              </div>
+                              <p align="right"><span id="giatri4"></span>% <button class="button button2" onclick="SetRelay(4)">ĐẶT</button></p>
+                              
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Main End -->
+
+              <!-- Footer Start -->
+              <div class="footer wow fadeIn" data-wow-delay="0.3s">
+                <div class="container-fluid">
+                    <div class="container">
+                        <div class="footer-info">
+                            <h2>Đồ Án IOT</h2>
+                            <h3></h3>
+                            <div class="footer-menu">
+                                <p>Giáo viên</p>
+                                <p>Nguyễn Văn Khanh</p>
+                            </div>
+                            <div class="footer-social">
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="container copyright">
+                        <a href="https://trungzkz.github.io/7013n/"><i class="fa fa-gamepad"></i></i></a>
+                        <a href="https://console.firebase.google.com/u/0/project/test-zkz/database/test-zkz-default-rtdb/data"><i class="fa fa-database"></i></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+                  <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/typed/typed.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        
+        <!-- Contact Javascript File -->
+        <script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+
+</body>
+</div>
+</html>
