@@ -8,9 +8,8 @@
 
 ## 🚀 Link liên quan
 
-[Realtime Database](https://console.firebase.google.com/u/0/project/test-zkz/database/test-zkz-default-rtdb/data)<br />
-[Project Console](https://console.firebase.google.com/project/test-zkz/overview) <br />
-[Hosting URL](https://test-zkz.web.app)<br />
+[Realtime Database](https://console.firebase.google.com/u/0/project/doaniot-bc245/database/doaniot-bc245-default-rtdb/data)<br />
+[Hosting URL](https://doaniot-bc245.web.app/)<br />
 [Blynk](https://blynk.cloud/dashboard/364713/global/filter/2643431)
 
 <details>
