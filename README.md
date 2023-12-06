@@ -19,9 +19,9 @@
 
 | Họ và Tên | MSSV |
 |-----:|---------------|
-|Bùi Tấn Đạt|B2012493|
-|Nguyễn Hoàng Khiêm|B2012510|
-|Lê Phú Nhuận |B2012453|
-|Lê Thành Trung|B2012477|
-|Lê Minh Nhựt|B2012454|
-|Nguyễn Thành Nhân|B2012452|
+|Bùi Tấn Đạt||
+|Nguyễn Hoàng Khiêm||
+|Lê Phú Nhuận ||
+|Lê Thành Trung||
+|Lê Minh Nhựt||
+|Nguyễn Thành Nhân||
