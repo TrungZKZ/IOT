@@ -49,13 +49,7 @@ void setup() {
   auth.user.email = USER_EMAIL;
   auth.user.password = USER_PASSWORD;
 
-  // Assign the callback function for the long running token generation task
-  config.token_status_callback = tokenStatusCallback;
-  //see addons/TokenHelper.h // Assign the maximum retry of token generation
-  config.max_token_generation_retry = 5;
-  // Initialize the library with the Firebase authen and config
-  Firebase.begin(&config, &auth);
-  // Assign the callback function for the long running token generation task
+// Assign the callback function for the long running token generation task
 config.token_status_callback = tokenStatusCallback;
 //see addons/TokenHelper.h // Assign the maximum retry of token generation
 config.max_token_generation_retry = 5;
